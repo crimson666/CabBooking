@@ -16,10 +16,11 @@ public class CabLocationController {
     @Autowired
     CabLocationService cabLocationService = new CabLocationService();
     @PutMapping
-    public ResponseEntity updateLocation(){
+    public ResponseEntity<?> updateLocation() throws InterruptedException {
         int range =100;
         while(range > 0){
-            System.out.println(Math.random() + "," + Math.random());
+            cabLocationService.sendDataToTopic(Math.random() + "," + Math.random());
+            Thread.sleep(1000);
             range --;
         }
         return new ResponseEntity<>(Map.of("Message","Location Updated"), HttpStatus.OK);
