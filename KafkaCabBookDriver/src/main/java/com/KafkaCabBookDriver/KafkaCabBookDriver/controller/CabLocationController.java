@@ -17,7 +17,7 @@ public class CabLocationController {
     CabLocationService cabLocationService = new CabLocationService();
     @PutMapping
     public ResponseEntity<?> updateLocation() throws InterruptedException {
-        int range =100;
+        int range =10;
         while(range > 0){
             cabLocationService.sendDataToTopic(Math.random() + "," + Math.random());
             Thread.sleep(1000);
