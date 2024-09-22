@@ -23,7 +23,7 @@ public class CabLocationController {
             Thread.sleep(1000);
             range --;
         }
-        return new ResponseEntity<>(Map.of("Message","Location Updated..."), HttpStatus.OK);
+        return new ResponseEntity<>(Map.of("Message","Location Updated...."), HttpStatus.OK);
     }
 }
 
